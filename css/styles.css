@@ -1,0 +1,49 @@
+/*fonts
+font-family: 'Niramit',sans-serif;
+font-family: 'Oswald',sans-serif;
+*/
+
+@import url('https://fonts.googleapis.com/css?family=Niramit|Oswald');
+.carousel-images {
+    width: 300px;
+    height: 600px;
+    object-fit: cover;
+}
+
+.producto {
+    height: 400px;
+    object-fit: cover;
+}
+
+.owl-nav {
+    text-align: center !important;
+}
+
+.navbar-brand {
+    color: white !important;
+}
+
+.navbar-toggler {
+    background-color: white !important;
+}
+
+.azul {
+    color: white;
+    background-color: #5087e0;
+}
+
+.nav-link {
+    color: white !important;
+}
+
+.rosa {
+    color: white;
+    background-color: #ef7ab8;
+}
+
+.ver-producto {
+    height: 800px;
+    width: 600px;
+    margin: auto;
+    object-fit: cover;
+}
