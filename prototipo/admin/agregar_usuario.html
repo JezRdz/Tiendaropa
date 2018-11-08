@@ -1,0 +1,174 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+
+    <!--css-->
+    <link rel="stylesheet" href="../css/styles.css">
+
+    <!--fonts-->
+    <style>
+        @import url('https://fonts.googleapis.com/css?family=Niramit|Oswald');
+
+p,h1,a {
+font-family: 'Niramit',sans-serif !important;
+}
+
+.color{
+    background-color: gray;
+}
+</style>
+
+<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+
+    <!--BS 4 css -->
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm"
+        crossorigin="anonymous">
+
+    <!--iconos fontawesome-->
+    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.4.1/css/all.css" integrity="sha384-5sAR7xN1Nv6T6+dT2mhtzEpVJvfS3NScPQTrOxhwjIuvcA67KV2R5Jz6kr4abQsz"
+        crossorigin="anonymous">
+
+</head>
+
+<body>
+    
+<nav class="navbar navbar-light color sticky-top">
+<a href="#menu-toggle" class="btn btn-outline-secondary" id="menu-toggle"><i class="fas fa-bars" style="color: white;"></i></a>
+</nav>
+
+
+<div id="wrapper">
+
+    <!-- Sidebar -->
+    <div id="sidebar-wrapper">
+        <ul class="sidebar-nav">
+            <li class="sidebar-brand">
+                <a href="#">
+                   ADMIN TIENDA
+                </a>
+            </li>
+            <li>
+                <a href="productos.html">Productos</a>
+            </li>
+            <li>
+<a href="usuarios.html">Usuarios</a>
+            </li>
+<li>
+    <a href="" class="btn btn-danger">Salir</a>
+</li>
+        </ul>
+    </div>
+    <!-- /#sidebar-wrapper -->
+
+    <!-- Page Content -->
+    <div id="page-content-wrapper">
+        <div class="container py-5">
+<a href="" class="btn btn-secondary">Cancelar</a>
+<div class="text-center">
+    <h1>Agregar Usuario Nuevo</h1>
+</div>
+                <div class="">
+
+                    <div class="container text-center">
+                        <h3>Datos del usuario</h3>
+<div class="user-img">
+<div class="card">
+    <img class="card-img-top" src="../img/placeholder.png" alt="Card image cap">
+    <div class="card-body">
+        <p class="card-text text-center">IMAGEN DE PERFIL</p>
+        <div class="input-group mb-3">
+            <div class="custom-file">
+                <input type="file" class="custom-file-input" id="inputGroupFile02">
+                <label class="custom-file-label" for="inputGroupFile02" aria-describedby="inputGroupFileAddon02"></label>
+            </div>
+        </div>
+    </div>
+</div>
+                        </div>
+<form class="add-productform" style="width: 50%; margin: auto;">
+    <div class="form-row">
+        <div class="form-group col-12">
+            <label for="inputEmail4">Nombre y Apellidos</label>
+            <input type="text" class="form-control" id="inputEmail4" placeholder="">
+        </div>
+    </div>
+<div class="form-row">
+<div class="form-group col-12">
+    <select class="custom-select">
+        <option selected>Seleccionar Departamento..</option>
+        <option value="1">Ventas</option>
+        <option value="2">Recursos Humanos</option>
+        <option value="3">Otros</option>
+    </select>
+</div>
+</div>
+<div class="form-row">
+<div class="form-group col-12">
+    <select class="custom-select">
+        <option selected>Seleccionar Rol..</option>
+        <option value="1">Administrador</option>
+        <option value="2">Usuario normal</option>
+        <option value="3">Cliente</option>
+    </select>
+</div>
+</div>
+    <div class="form-group">
+        <div class="form-check">
+            <input class="form-check-input" type="checkbox" id="gridCheck">
+            <label class="form-check-label" for="gridCheck">
+                ¿Activo?
+            </label>
+        </div>
+    </div>
+    <div class="text-center">
+        <button type="submit" class="btn btn-outline-primary btn-lg">Guardar</button>
+    </div>
+</form>
+                    </div>
+                </div>
+           
+            
+        </div>
+    </div>
+    <!-- /#page-content-wrapper -->
+
+</div>
+
+    <!--
+    <footer>
+<footer id="footer" class="gris pt-4">
+
+    <div class="container-fluid text-center text-md-left">
+   
+    <div class="footer-copyright text-center py-3">
+        <h4>Lorem, ipsum.</h4>
+    </div>
+
+</footer>
+</footer> -->
+
+
+
+</body>
+
+
+<!--BS4 scripts -->
+<script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js" integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q"
+    crossorigin="anonymous"></script>
+<script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js" integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl"
+    crossorigin="anonymous"></script>
+
+<!-- Menu Toggle Script -->
+<script>
+    $("#menu-toggle").click(function (e) {
+        e.preventDefault();
+        $("#wrapper").toggleClass("toggled");
+    });
+</script>
+
+</html>
