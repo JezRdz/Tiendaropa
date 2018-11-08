@@ -30,6 +30,12 @@ App::uses('AppController', 'Controller');
  */
 class HomeController extends AppController {
 
+	public function beforeFilter()
+	{
+		parent::beforeFilter();
+		$this->layout = 'front';
+	}
+
 	public function index(){
 		
 	}
