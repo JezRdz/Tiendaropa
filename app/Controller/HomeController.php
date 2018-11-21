@@ -54,5 +54,28 @@ class HomeController extends AppController {
 	public function carrito(){
 		
 	}
+	public function producto($id = null){
+		$this->loadModel('Product');
+		$this->set('product', $this->Product->find('first', array(
+			'conditions' => array(
+				'Product.id' => $id
+			)
+		)));
+
+		$post = $this->Product->findById($id);
+
+		if (!$this->request->data) {
+			$this->request->data = $post;
+		}
+	}
+
+	public function buscar_producto(){
+		if (!empty($this->request->data)) {
+			if (!empty($this->request->data['Product']['name'])) {
+				$redireccion .= 'name:' . $this->request->data['Product']['name'] . '/';
+			}
+		}
+		$this->redirect($redireccion);
+	}
 	
 }
