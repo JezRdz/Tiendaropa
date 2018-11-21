@@ -26,6 +26,18 @@
  * to use (in this case, /app/View/Pages/home.ctp)...
  */
 	Router::connect('/', array('controller' => 'home', 'action' => 'index'));
+	Router::connect('/hombre', array('controller' => 'home', 'action' => 'hombre'));
+	Router::connect('/mujer', array('controller' => 'home', 'action' => 'mujer'));
+	Router::connect('/articulo', array('controller' => 'home', 'action' => 'articulo'));
+
+
+	Router::connect('/admin', array('controller' => 'admin', 'action' => 'index'));
+	Router::connect('/usuarios', array('controller' => 'admin', 'action' => 'usuarios'));
+	Router::connect('/productos', array('controller' => 'admin', 'action' => 'productos'));
+	Router::connect('/agregar_usuario', array('controller' => 'admin', 'action' => 'agregar_usuario'));
+	Router::connect('/editar_usuario', array('controller' => 'admin', 'action' => 'editar_usuario'));
+	Router::connect('/agregar_producto', array('controller' => 'admin', 'action' => 'agregar_producto'));
+	Router::connect('/editar_producto', array('controller' => 'admin', 'action' => 'editar_producto'));
 /**
  * ...and connect the rest of 'Pages' controller's URLs.
  */

@@ -45,6 +45,9 @@ class HomeController extends AppController {
 	public function mujer(){
 		
 	}
+	public function articulo(){
+		
+	}
 	public function perfil(){
 		
 	}

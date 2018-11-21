@@ -33,7 +33,7 @@
 
 <body>
 	<nav class="navbar navbar-expand-lg navbar-light sticky-top azul">
-        <a class="navbar-brand" href="index.html">MARCO</a>
+        <a class="navbar-brand" href="/">MARCO</a>
         <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent"
             aria-expanded="false" aria-label="Toggle navigation">
             <span class="navbar-toggler-icon"></span>
@@ -42,7 +42,7 @@
         <div class="collapse navbar-collapse" id="navbarSupportedContent">
             <ul class="navbar-nav mr-auto">
                 <li class="nav-item active">
-                    <a class="nav-link" href="index.html">Home
+                    <a class="nav-link" href="/">Home
                         <span class="sr-only">(current)</span>
                     </a>
                 </li>
@@ -52,8 +52,8 @@
                         Catalogo
                     </a>
                     <div class="dropdown-menu" aria-labelledby="navbarDropdown">
-                        <a class="dropdown-item hombre" href="index.html">Ropa para Hombre</a>
-                        <a class="dropdown-item mujer" href="mujer.html">Ropa para Mujer</a>                        
+                        <a class="dropdown-item hombre" href="/hombre">Ropa para Hombre</a>
+                        <a class="dropdown-item mujer" href="/mujer">Ropa para Mujer</a>                        
                     </div>
                 </li>
                 <li class="nav-item">
@@ -70,7 +70,28 @@
         </div>
     </nav>
 
-	<?php echo $this->fetch('content'); ?>
+<div class="container-fluid">
+    <div class="row">
+        <div class="col-lg-2">
+
+            <h1 class="my-4">Menu</h1>
+            <div class="list-group">
+                <a href="/hombre" class="list-group-item hombre">Ropa Hombre</a>
+                <a href="/mujer" class="list-group-item">Ropa Mujer</a>                
+            </div>
+
+            <div class="py-5">
+                <p>Lo mejor en ropa para hombre de todo Mexico</p>
+            </div>
+
+        </div>
+
+        <div class="col-lg-10">
+            <?php echo $this->fetch('content'); ?>            
+        </div>
+    </div>
+    </div>
+	
 
 	<footer id="footer" class="azul pt-4">
 

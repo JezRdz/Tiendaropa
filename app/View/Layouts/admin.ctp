@@ -6,11 +6,16 @@
 	<meta name="format-detection" content="telephone=no">
 	<meta charset="UTF-8">
 
-	<title>Helplace</title>
+    <title>Tienda</title>
+    <?php
+    echo $this->Html->css('styles');
+    echo $this->fetch('meta');
+    echo $this->fetch('css');
+
+    ?>
 
 	<link rel="icon" type="image/png" href="/img/front/favicon-01.png" sizes="64x64">
 	<!-- Include external files and scripts here (See HTML helper for more info.) -->
-	<?php echo $this->fetch('meta'); ?>
 
 	<!-- BS -->
 	<link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/css/bootstrap.min.css" integrity="sha384-MCw98/SFnGE8fJT3GXwEOngsV7Zt27NXFoaoApmYm81iuXoPkFOJwJ8ERdknLPMO"
@@ -31,47 +36,41 @@
 
 <body>
 
-	<div class="loader-full">
-		<div class="loader-gif">
-			<img src="img/iconos/loadercel.gif" alt="">
-		</div>
-	</div>
+<nav class="navbar navbar-dark bg-dark sticky-top">
+<a href="#menu-toggle" class="btn btn-outline-secondary" id="menu-toggle"><i class="fas fa-bars" style="color: white;"></i></a>
+</nav>
 
-	<nav class="navbar navbar-expand-lg navbar-dark azul-proyecto sticky-top">
-    <!-- Image and text -->
+	<div id="wrapper">
 
-  <a class="navbar-brand d-lg-none" href="/" style="color: white;">
-    <img src="img/iconos/logo.png" width="30" height="30" class="d-inline-block align-top" alt="">
-    Helplace
-  </a>
+    <!-- Sidebar -->
+    <div id="sidebar-wrapper">
+        <ul class="sidebar-nav">
+            <li class="sidebar-brand">
+                <a href="#">
+                   ADMIN TIENDA
+                </a>
+            </li>
+            <li>
+                <a href="/productos">Productos</a>
+            </li>
+            <li>
+                <a href="/usuarios">Usuarios</a>
+            </li>
+<li>
+    <a href="" class="btn btn-danger">Salir</a>
+</li>
+        </ul>
+    </div>
+    <!-- /#sidebar-wrapper -->
 
-		<button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNavDropdown" aria-controls="navbarNavDropdown"
-		 aria-expanded="false" aria-label="Toggle navigation">
-			<span class="navbar-toggler-icon"></span>
-		</button>
-		<div class="collapse navbar-collapse" id="navbarNavDropdown">
-			<ul class="navbar-nav">
-				<li class="nav-item">
-					<a class="nav-link home-link" href="/">Home <span class="sr-only">(current)</span></a>
-				</li>
-				<li class="nav-item">
-					<a class="nav-link plaza-link" href="/plazas">Plazas comerciales</a>
-				</li>
-			<!-- 	
-				<li class="nav-item">
-					<a class="nav-link solicitar-link" href="#">Solicitar una plaza</a>
-				</li> -->
+    <!-- Page Content -->
+    <div id="page-content-wrapper">
+        <?php echo $this->fetch('content'); ?>
+    </div>
+    <!-- /#page-content-wrapper -->
 
-			</ul>
-		</div>
-	</nav>
+</div>
 
-	<div class="logo-container text-center d-none d-lg-block">
-		<img src="img/iconos/logo.png" alt="" class="logo">
-		<span>Helplace</span>
-	</div>
-
-	<?php echo $this->fetch('content'); ?>
 
 	<div id="footer">
 	</div>
@@ -93,3 +92,5 @@
 </body>
 
 </html>
+
+<?php $this->Html->css('styles', array('block' => true)); ?>
