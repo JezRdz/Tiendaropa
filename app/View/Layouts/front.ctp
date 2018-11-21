@@ -6,7 +6,7 @@
 	<meta name="format-detection" content="telephone=no">
 	<meta charset="UTF-8">
 
-	<title>Helplace</title>
+	<title>Tienda</title>
 
 	<link rel="icon" type="image/png" href="/img/front/favicon-01.png" sizes="64x64">
 	<!-- Include external files and scripts here (See HTML helper for more info.) -->
@@ -15,8 +15,8 @@
 	<!-- BS -->
 	<link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/css/bootstrap.min.css" integrity="sha384-MCw98/SFnGE8fJT3GXwEOngsV7Zt27NXFoaoApmYm81iuXoPkFOJwJ8ERdknLPMO"
 	 crossorigin="anonymous">
-	 
-	  <?php $this->Html->css('styles', array('inline' => false)); ?>
+
+	<?php $this->Html->css('styles', array('inline' => false)); ?>
 	<?php echo $this->fetch('css'); ?>
 
 	<!--iconos fontawesome-->
@@ -33,76 +33,76 @@
 
 <body>
 	<nav class="navbar navbar-expand-lg navbar-light sticky-top azul">
-        <a class="navbar-brand" href="/">MARCO</a>
-        <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent"
-            aria-expanded="false" aria-label="Toggle navigation">
-            <span class="navbar-toggler-icon"></span>
-        </button>
-    
-        <div class="collapse navbar-collapse" id="navbarSupportedContent">
-            <ul class="navbar-nav mr-auto">
-                <li class="nav-item active">
-                    <a class="nav-link" href="/">Home
-                        <span class="sr-only">(current)</span>
-                    </a>
-                </li>
-                <li class="nav-item dropdown">
-                    <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true"
-                        aria-expanded="false">
-                        Catalogo
-                    </a>
-                    <div class="dropdown-menu" aria-labelledby="navbarDropdown">
-                        <a class="dropdown-item hombre" href="/hombre">Ropa para Hombre</a>
-                        <a class="dropdown-item mujer" href="/mujer">Ropa para Mujer</a>                        
-                    </div>
-                </li>
-                <li class="nav-item">
-                    <a class="nav-link disabled" href="#footer">Contacto</a>
-                </li>
-            </ul>
-            <div class="pr-3">
-<button class="btn btn-default my-2 my-sm-0" type="submit"><i class="fas fa-shopping-cart"></i></button>
-            </div>
-            <form class="form-inline my-2 my-lg-0">
-                <input class="form-control mr-sm-2" type="search" placeholder="Buscar.." aria-label="Search">
-                <button class="btn btn-primary my-2 my-sm-0" type="submit">Search</button>
-            </form>
-        </div>
-    </nav>
+		<a class="navbar-brand" href="/">MARCO</a>
+		<button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent"
+		 aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+			<span class="navbar-toggler-icon"></span>
+		</button>
 
-<div class="container-fluid">
-    <div class="row">
-        <div class="col-lg-2">
+		<div class="collapse navbar-collapse" id="navbarSupportedContent">
+			<ul class="navbar-nav mr-auto">
+				<li class="nav-item active">
+					<a class="nav-link" href="/">Home
+						<span class="sr-only">(current)</span>
+					</a>
+				</li>
+				<li class="nav-item dropdown">
+					<a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-toggle="dropdown"
+					 aria-haspopup="true" aria-expanded="false">
+						Catalogo
+					</a>
+					<div class="dropdown-menu" aria-labelledby="navbarDropdown">
+						<a class="dropdown-item hombre" href="/hombre">Ropa para Hombre</a>
+						<a class="dropdown-item mujer" href="/mujer">Ropa para Mujer</a>
+					</div>
+				</li>
+				<li class="nav-item">
+					<a class="nav-link disabled" href="#footer">Contacto</a>
+				</li>
+			</ul>
+			<div class="pr-3">
+				<button class="btn btn-default my-2 my-sm-0" type="submit"><i class="fas fa-shopping-cart"></i></button>
+			</div>
+			<form class="form-inline my-2 my-lg-0">
+				<input class="form-control mr-sm-2" type="search" placeholder="Buscar.." aria-label="Search">
+				<button class="btn btn-primary my-2 my-sm-0" type="submit">Search</button>
+			</form>
+		</div>
+	</nav>
 
-            <h1 class="my-4">Menu</h1>
-            <div class="list-group">
-                <a href="/hombre" class="list-group-item hombre">Ropa Hombre</a>
-                <a href="/mujer" class="list-group-item">Ropa Mujer</a>                
-            </div>
+	<div class="container-fluid">
+		<div class="row">
+			<div class="col-lg-2">
 
-            <div class="py-5">
-                <p>Lo mejor en ropa para hombre de todo Mexico</p>
-            </div>
+				<h1 class="my-4">Menu</h1>
+				<div class="list-group">
+					<a href="/hombre" class="list-group-item hombre">Ropa Hombre</a>
+					<a href="/mujer" class="list-group-item">Ropa Mujer</a>
+				</div>
 
-        </div>
+				<div class="py-5">
+					<p>Lo mejor en ropa para hombre de todo Mexico</p>
+				</div>
 
-        <div class="col-lg-10">
-            <?php echo $this->fetch('content'); ?>            
-        </div>
-    </div>
-    </div>
-	
+			</div>
+
+			<div class="col-lg-10">
+				<?php echo $this->fetch('content'); ?>
+			</div>
+		</div>
+	</div>
+
 
 	<footer id="footer" class="azul pt-4">
 
-    <div class="container-fluid text-center text-md-left">
-    <!-- Copyright -->
-    <div class="footer-copyright text-center py-3">
-        <h4>Lorem, ipsum.</h4>
-    </div>
-    <!-- Copyright -->
+		<div class="container-fluid text-center text-md-left">
+			<!-- Copyright -->
+			<div class="footer-copyright text-center py-3">
+				<h4>Lorem, ipsum.</h4>
+			</div>
+			<!-- Copyright -->
 
-</footer>
+	</footer>
 	</div>
 
 	<!-- BS JS -->

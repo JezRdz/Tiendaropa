@@ -56,7 +56,7 @@ body {
   height: 100%;
   margin-left: -250px;
   overflow-y: auto;
-  background: green;
+  background-color: gray;
   color: white;
   -webkit-transition: all 0.5s ease;
   -moz-transition: all 0.5s ease;
@@ -143,10 +143,13 @@ body {
 
 .add-productform {
   background-color: gainsboro;
-  padding: 40px; }
+  padding: 30px; }
 
 .user-img {
   width: 50%;
   margin: auto; }
+
+.btn-group-lg > .btn, .btn-lg {
+  border-radius: 2em !important; }
 
 /*# sourceMappingURL=styles.css.map */

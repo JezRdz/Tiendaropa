@@ -75,9 +75,10 @@ class AdminController extends AppController {
 			$this->Flash->error(
 				__('The user could not be saved. Please, try again.')
 			);
-		} else {
-			$this->request->data = $this->User->findById($id);
-			unset($this->request->data['User']['password']);
+		}
+
+		if (!$this->request->data) {
+			$this->request->data = $post;
 		}
 
 	}
@@ -100,50 +101,60 @@ class AdminController extends AppController {
 
 	//Product Views
 	public function productos(){
-		
+		$this->loadModel('Product');
+		$this->set('products', $this->Product->find('all'));
+
+		$this->loadModel('Category');
+		$this->set('categories', $this->Category->find('all'));		
 	}
+
 	public function agregar_producto(){
+		$this->loadModel('Product');
+		$this->loadModel('Category');
+		$this->set('categories', $this->Product->Category->find('list'));
+
 		if ($this->request->is('post')) {
-			$this->User->create();
-			if ($this->User->save($this->request->data)) {
-				$this->Flash->success(__('The user has been saved'));
-				return $this->redirect(array('action' => 'index'));
+			$this->Product->create();
+			if ($this->Product->save($this->request->data)) {
+				$this->Flash->success(__('The product has been saved'));
+				return $this->redirect(array('action' => 'productos'));
 			}
 			$this->Flash->error(
-				__('The user could not be saved. Please, try again.')
+				__('The product could not be saved. Please, try again.')
 			);
 		}		
 	}
 
-	public function editar_producto(){
-		$this->User->id = $id;
-		if (!$this->User->exists()) {
+	public function editar_producto($id=null){
+		$this->Product->id = $id;
+		if (!$this->Product->exists()) {
 			throw new NotFoundException(__('Invalid user'));
 		}
 		if ($this->request->is('post') || $this->request->is('put')) {
-			if ($this->User->save($this->request->data)) {
+			if ($this->Product->save($this->request->data)) {
 				$this->Flash->success(__('The user has been saved'));
-				return $this->redirect(array('action' => 'index'));
+				return $this->redirect(array('action' => 'productos'));
 			}
 			$this->Flash->error(
-				__('The user could not be saved. Please, try again.')
+				__('The product could not be saved. Please, try again.')
 			);
-		} else {
-			$this->request->data = $this->User->findById($id);
-			unset($this->request->data['User']['password']);
+		}
+
+		if (!$this->request->data) {
+			$this->request->data = $post;
 		}
 	}
 
 	public function eliminar_producto(){
 		$this->request->allowMethod('post');
 
-		$this->User->id = $id;
-		if (!$this->User->exists()) {
-			throw new NotFoundException(__('Invalid user'));
+		$this->Product->id = $id;
+		if (!$this->Product->exists()) {
+			throw new NotFoundException(__('Invalid product'));
 		}
-		if ($this->User->delete()) {
-			$this->Flash->success(__('User deleted'));
-			return $this->redirect(array('action' => 'index'));
+		if ($this->Product->delete()) {
+			$this->Flash->success(__('product deleted'));
+			return $this->redirect(array('action' => 'productos'));
 		}
 		$this->Flash->error(__('User was not deleted'));
 		return $this->redirect(array('action' => 'index'));

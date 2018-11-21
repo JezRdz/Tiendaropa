@@ -6,8 +6,8 @@
 	<meta name="format-detection" content="telephone=no">
 	<meta charset="UTF-8">
 
-    <title>Tienda</title>
-    <?php
+	<title>Tienda</title>
+	<?php
     echo $this->Html->css('styles');
     echo $this->fetch('meta');
     echo $this->fetch('css');
@@ -36,40 +36,40 @@
 
 <body>
 
-<nav class="navbar navbar-dark bg-dark sticky-top">
-<a href="#menu-toggle" class="btn btn-outline-secondary" id="menu-toggle"><i class="fas fa-bars" style="color: white;"></i></a>
-</nav>
+	<nav class="navbar navbar-dark bg-dark sticky-top">
+		<a href="#menu-toggle" class="btn btn-outline-secondary" id="menu-toggle"><i class="fas fa-bars" style="color: white;"></i></a>
+	</nav>
 
 	<div id="wrapper">
 
-    <!-- Sidebar -->
-    <div id="sidebar-wrapper">
-        <ul class="sidebar-nav">
-            <li class="sidebar-brand">
-                <a href="#">
-                   ADMIN TIENDA
-                </a>
-            </li>
-            <li>
-                <a href="/productos">Productos</a>
-            </li>
-            <li>
-                <a href="/usuarios">Usuarios</a>
-            </li>
-<li>
-    <a href="" class="btn btn-danger">Salir</a>
-</li>
-        </ul>
-    </div>
-    <!-- /#sidebar-wrapper -->
+		<!-- Sidebar -->
+		<div id="sidebar-wrapper">
+			<ul class="sidebar-nav">
+				<li class="sidebar-brand">
+					<a href="#">
+						ADMIN TIENDA
+					</a>
+				</li>
+				<li>
+					<a href="/admin/productos">Productos</a>
+				</li>
+				<li>
+					<a href="/admin/usuarios">Usuarios</a>
+				</li>
+				<li>
+					<a href="/admin" class="btn btn-danger">Salir</a>
+				</li>
+			</ul>
+		</div>
+		<!-- /#sidebar-wrapper -->
 
-    <!-- Page Content -->
-    <div id="page-content-wrapper">
-        <?php echo $this->fetch('content'); ?>
-    </div>
-    <!-- /#page-content-wrapper -->
+		<!-- Page Content -->
+		<div id="page-content-wrapper">
+			<?php echo $this->fetch('content'); ?>
+		</div>
+		<!-- /#page-content-wrapper -->
 
-</div>
+	</div>
 
 
 	<div id="footer">
