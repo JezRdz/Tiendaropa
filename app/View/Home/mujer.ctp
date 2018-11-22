@@ -1,5 +1,5 @@
 <div class="text-center py-5">
-	<h1>ROPA PARA HOMBRE</h1>
+	<h1>ROPA PARA MUJER</h1>
 </div>
 <div class="carousel-seccion owl-carousel pb-5">
 	<?php foreach ($products as $product) : ?>

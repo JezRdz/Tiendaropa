@@ -84,7 +84,7 @@
 				</div>
 
 				<div class="py-5">
-					<p>Lo mejor en ropa para hombre de todo Mexico</p>
+					<p>Lo mejor en ropa de todo Mexico</p>
 				</div>
 
 			</div>

@@ -27,8 +27,8 @@
     <tbody>
        <?php foreach ($products as $product) : ?>
 			<tr>
-				<th scope="row">1</th>
-				<td><img src="../ropa/hombre/1.jpg" class="rounded-circle productos-img" alt=""></td>
+				<th scope="row"><?php echo $product['Product']['id'] ?></th>
+				<td><img src="/<?php echo $product['Image']['path'] . $product['Image']['name']; ?>" class="rounded-circle productos-img" alt=""></td>
 				<td>
 					<?php echo $product['Product']['name'] ?>
 				</td>
@@ -57,8 +57,7 @@
 <table class="table text-center table-hover">
     <thead class="">
         <tr>
-            <th scope="col">#</th>
-			<th scope="col"></th>
+            <th scope="col">#</th>			
 			<th scope="col">Username</th>
 			<th scope="col">Nombre</th>
 			<th scope="col">Rol</th>
@@ -69,8 +68,7 @@
 			<tr>
 				<th scope="row">
 					<?php echo $user['User']['id'] ?>
-				</th>
-				<td><img src="../img/admin.png" class="rounded-circle productos-img" alt=""></td>
+				</th>				
 				<td>
 					<?php echo $user['User']['username'] ?>
 				</td>
