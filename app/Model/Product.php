@@ -5,6 +5,8 @@ App::uses('AppModel', 'Model');
  *
  * @property Category $Category
  * @property Image $Image
+ * @property Image2 $Image2
+ * @property Image3 $Image3
  */
 class Product extends AppModel {
 
@@ -34,6 +36,20 @@ class Product extends AppModel {
 		'Image' => array(
 			'className' => 'Image',
 			'foreignKey' => 'image_id',
+			'conditions' => '',
+			'fields' => '',
+			'order' => ''
+		),
+		'Image2' => array(
+			'className' => 'Image',
+			'foreignKey' => 'image2_id',
+			'conditions' => '',
+			'fields' => '',
+			'order' => ''
+		),
+		'Image3' => array(
+			'className' => 'Image',
+			'foreignKey' => 'image3_id',
 			'conditions' => '',
 			'fields' => '',
 			'order' => ''

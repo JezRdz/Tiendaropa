@@ -37,36 +37,46 @@ class HomeController extends AppController {
 	}
 
 	public function index(){
+		$this->loadModel('Product');
+		$this->set('products', $this->Product->find('all'));
 		
 	}
 	public function hombre(){
+
+		$this->loadModel('Product');
+		$this->set('products', $this->Product->find('all', array(
+			'conditions' => array(
+				'Product.category_id' => 1
+			)
+		)));
 		
 	}
 	public function mujer(){
+		$this->loadModel('Product');
+		$this->set('products', $this->Product->find('all', array(
+			'conditions' => array(
+				'Product.category_id' => 2
+			)
+		)));
 		
 	}
-	public function articulo(){
-		
-	}
-	public function perfil(){
-		
-	}
-	public function carrito(){
-		
-	}
-	public function producto($id = null){
+	public function articulo($id = null){
 		$this->loadModel('Product');
 		$this->set('product', $this->Product->find('first', array(
 			'conditions' => array(
 				'Product.id' => $id
 			)
 		)));
+		
+		$this->loadModel('Category');
+		$this->set('categories', $this->Product->Category->find('first'));
+	}
 
-		$post = $this->Product->findById($id);
-
-		if (!$this->request->data) {
-			$this->request->data = $post;
-		}
+	public function perfil(){
+		
+	}
+	public function carrito(){
+		
 	}
 
 	public function buscar_producto(){

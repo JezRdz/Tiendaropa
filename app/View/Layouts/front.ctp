@@ -8,16 +8,9 @@
 
 	<title>Tienda</title>
 
-	<link rel="icon" type="image/png" href="/img/front/favicon-01.png" sizes="64x64">
+	<link rel="icon" type="image/png" href="/img/fav-icon.png" sizes="64x64">
 	<!-- Include external files and scripts here (See HTML helper for more info.) -->
 	<?php echo $this->fetch('meta'); ?>
-
-	<!-- BS -->
-	<link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/css/bootstrap.min.css" integrity="sha384-MCw98/SFnGE8fJT3GXwEOngsV7Zt27NXFoaoApmYm81iuXoPkFOJwJ8ERdknLPMO"
-	 crossorigin="anonymous">
-
-	<?php $this->Html->css('styles', array('inline' => false)); ?>
-	<?php echo $this->fetch('css'); ?>
 
 	<!--iconos fontawesome-->
 	<link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.4.1/css/all.css" integrity="sha384-5sAR7xN1Nv6T6+dT2mhtzEpVJvfS3NScPQTrOxhwjIuvcA67KV2R5Jz6kr4abQsz"
@@ -26,8 +19,16 @@
 	<link href="https://fonts.googleapis.com/css?family=Open+Sans+Condensed:300,700" rel="stylesheet">
 
 	<!--carrousel-->
-	<link rel="stylesheet" href="js/owlcarousel/assets/owl.carousel.min.css">
-	<link rel="stylesheet" href="js/owlcarousel/assets/owl.theme.default.min.css">
+	<link rel="stylesheet" href="/js/owlcarousel/assets/owl.carousel.min.css">
+	<link rel="stylesheet" href="/js/owlcarousel/assets/owl.theme.default.min.css">
+
+	<!-- BS -->
+	<link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/css/bootstrap.min.css" integrity="sha384-MCw98/SFnGE8fJT3GXwEOngsV7Zt27NXFoaoApmYm81iuXoPkFOJwJ8ERdknLPMO"
+	 crossorigin="anonymous">
+
+	<?php $this->Html->css('styles', array('inline' => false)); ?>
+	<?php echo $this->fetch('css'); ?>
+
 
 </head>
 
@@ -52,8 +53,9 @@
 						Catalogo
 					</a>
 					<div class="dropdown-menu" aria-labelledby="navbarDropdown">
-						<a class="dropdown-item hombre" href="/hombre">Ropa para Hombre</a>
-						<a class="dropdown-item mujer" href="/mujer">Ropa para Mujer</a>
+						<a class="dropdown-item" href="/">Toda la ropa</a>
+						<a class="dropdown-item" href="/hombre">Ropa para Hombre</a>
+						<a class="dropdown-item" href="/mujer">Ropa para Mujer</a>
 					</div>
 				</li>
 				<li class="nav-item">
@@ -76,6 +78,7 @@
 
 				<h1 class="my-4">Menu</h1>
 				<div class="list-group">
+					<a href="/" class="list-group-item hombre">Toda la ropa</a>
 					<a href="/hombre" class="list-group-item hombre">Ropa Hombre</a>
 					<a href="/mujer" class="list-group-item">Ropa Mujer</a>
 				</div>
@@ -112,10 +115,11 @@
 	 crossorigin="anonymous"></script>
 	<script src="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/js/bootstrap.min.js" integrity="sha384-ChfqqxuZUCnJSK3+MXmPNIyE6ZbWh2IMqE241rYiqJxyMiZ6OW/JmZQ5stwEULTy"
 	 crossorigin="anonymous"></script>
-	<script src="js/owlcarousel/owl.carousel.min.js"></script>
-	<script src="js/carousel.js"></script>
-	<script src="js/random.js"></script>
-	<?php echo $this->fetch('script'); ?>
+	<script src="/js/owlcarousel/owl.carousel.min.js"></script>
+	<script src="/js/random.js"></script>
+	<script src="/js/carousel.js"></script>
 </body>
 
 </html>
+
+	<?php echo $this->fetch('script'); ?>

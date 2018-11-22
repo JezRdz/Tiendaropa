@@ -30,6 +30,8 @@ App::uses('AppController', 'Controller');
  */
 class AdminController extends AppController {
 
+	public $components = array('SubirImagen');
+
 	public function beforeFilter()
 	{
 		parent::beforeFilter();
@@ -37,7 +39,14 @@ class AdminController extends AppController {
 	}
 	
 	public function index(){
-		
+		$this->loadModel('User');
+		$this->set('users', $this->User->find('all'));
+
+		$this->loadModel('Product');
+		$this->set('products', $this->Product->find('all'));
+
+		$this->loadModel('Category');
+		$this->set('categories', $this->Category->find('all'));	
 	}
 
 	//User Views
@@ -63,18 +72,26 @@ class AdminController extends AppController {
 
 	public function editar_usuario($id = null)
 	{
-		$this->User->id = $id;
-		if (!$this->User->exists()) {
-			throw new NotFoundException(__('Invalid user'));
+		$this->loadModel('User');
+		$this->set('users', $this->User->find('all'));
+
+		if (!$id) {
+			throw new NotFoundException(__('Usuario no valido'));
 		}
-		if ($this->request->is('post') || $this->request->is('put')) {
+
+		$post = $this->User->findById($id);
+		if (!$post) {
+			throw new NotFoundException(__('Usuario no valido'));
+			$msg = new SAMMessage('SAADD');
+		}
+
+		if ($this->request->is(array('post', 'put'))) {
+			$this->User->id = $id;
 			if ($this->User->save($this->request->data)) {
-				$this->Flash->success(__('The user has been saved'));
-				return $this->redirect(array('action' => 'index'));
+				$this->Flash->success(__('Los datos han sido actualizados.'));
+				return $this->redirect(array('action' => 'usuarios'));
 			}
-			$this->Flash->error(
-				__('The user could not be saved. Please, try again.')
-			);
+			$this->Flash->error(__('No se pueden actualizar los datos.'));
 		}
 
 		if (!$this->request->data) {
@@ -82,21 +99,23 @@ class AdminController extends AppController {
 		}
 
 	}
-	public function eliminar_usuario()
-	{
-		$this->request->allowMethod('post');
+	
+	public function eliminar_usuario($id)
+	{		
+			$this->loadModel('User');			
 
-		$this->User->id = $id;
-		if (!$this->User->exists()) {
-			throw new NotFoundException(__('Invalid user'));
-		}
-		if ($this->User->delete()) {
-			$this->Flash->success(__('User deleted'));
-			return $this->redirect(array('action' => 'index'));
-		}
-		$this->Flash->error(__('User was not deleted'));
-		return $this->redirect(array('action' => 'index'));
+			if ($this->User->delete($id)) {
+				$this->Flash->success(
+					__('The post with id: %s has been deleted.', h($id))
+				);
+			} else {
+				$this->Flash->error(
+					__('The post with id: %s could not be deleted.', h($id))
+				);
+			}
 
+			return $this->redirect(array('action' => 'usuarios'));
+	
 	}
 
 	//Product Views
@@ -115,6 +134,24 @@ class AdminController extends AppController {
 
 		if ($this->request->is('post')) {
 			$this->Product->create();
+			if (!empty($this->request->data['Product']['imagen1']['tmp_name'])) {
+				$data['path'] = 'img/admin/productos/';
+				$data['file'] = $this->request->data['Product']['imagen1'];
+				$this->request->data['Product']['image_id'] = $this->SubirImagen->guardar_imagen($data);
+			}
+
+			if (!empty($this->request->data['Product']['imagen2']['tmp_name'])) {
+				$data['path'] = 'img/admin/productos/';
+				$data['file'] = $this->request->data['Product']['imagen2'];
+				$this->request->data['Product']['image2_id'] = $this->SubirImagen->guardar_imagen($data);
+			}
+
+			if (!empty($this->request->data['Product']['imagen3']['tmp_name'])) {
+				$data['path'] = 'img/admin/productos/';
+				$data['file'] = $this->request->data['Product']['imagen3'];
+				$this->request->data['Product']['image3_id'] = $this->SubirImagen->guardar_imagen($data);
+			}
+
 			if ($this->Product->save($this->request->data)) {
 				$this->Flash->success(__('The product has been saved'));
 				return $this->redirect(array('action' => 'productos'));
@@ -126,18 +163,52 @@ class AdminController extends AppController {
 	}
 
 	public function editar_producto($id=null){
-		$this->Product->id = $id;
-		if (!$this->Product->exists()) {
-			throw new NotFoundException(__('Invalid user'));
+		$this->loadModel('Product');
+		$this->set('product', $this->Product->find('first', array(
+			'conditions' => array(
+				'Product.id' => $id
+			)
+		)));
+
+		$this->loadModel('Category');
+		$this->set('categories', $this->Product->Category->find('list'));
+		
+		if (!$id) {
+			throw new NotFoundException(__('Usuario no valido'));
 		}
-		if ($this->request->is('post') || $this->request->is('put')) {
+
+		$post = $this->Product->findById($id);
+		if (!$post) {
+			throw new NotFoundException(__('Usuario no valido'));
+			$msg = new SAMMessage('SAADD');
+		}
+
+		if ($this->request->is(array('post', 'put'))) {
+			$this->Product->id = $id;
+
+			if (!empty($this->request->data['Product']['imagen1']['tmp_name'])) {
+				$data['path'] = 'img/admin/productos/';
+				$data['file'] = $this->request->data['Product']['imagen1'];
+				$this->request->data['Product']['image_id'] = $this->SubirImagen->guardar_imagen($data);
+			}
+
+			if (!empty($this->request->data['Product']['imagen2']['tmp_name'])) {
+				$data['path'] = 'img/admin/productos/';
+				$data['file'] = $this->request->data['Product']['imagen2'];
+				$this->request->data['Product']['image2_id'] = $this->SubirImagen->guardar_imagen($data);
+			}
+
+			if (!empty($this->request->data['Product']['imagen3']['tmp_name'])) {
+				$data['path'] = 'img/admin/productos/';
+				$data['file'] = $this->request->data['Product']['imagen3'];
+				$this->request->data['Product']['image3_id'] = $this->SubirImagen->guardar_imagen($data);
+			}
+
 			if ($this->Product->save($this->request->data)) {
-				$this->Flash->success(__('The user has been saved'));
+				$this->Flash->success(__('Los datos han sido actualizados.'));
 				return $this->redirect(array('action' => 'productos'));
 			}
-			$this->Flash->error(
-				__('The product could not be saved. Please, try again.')
-			);
+			$this->Flash->error(__('No se pueden actualizar los datos.'));
 		}
 
 		if (!$this->request->data) {
@@ -145,19 +216,20 @@ class AdminController extends AppController {
 		}
 	}
 
-	public function eliminar_producto(){
-		$this->request->allowMethod('post');
+	public function eliminar_producto($id){
+		$this->loadModel('Product');
 
-		$this->Product->id = $id;
-		if (!$this->Product->exists()) {
-			throw new NotFoundException(__('Invalid product'));
+		if ($this->Product->delete($id)) {
+			$this->Flash->success(
+				__('The post with id: %s has been deleted.', h($id))
+			);
+		} else {
+			$this->Flash->error(
+				__('The post with id: %s could not be deleted.', h($id))
+			);
 		}
-		if ($this->Product->delete()) {
-			$this->Flash->success(__('product deleted'));
-			return $this->redirect(array('action' => 'productos'));
-		}
-		$this->Flash->error(__('User was not deleted'));
-		return $this->redirect(array('action' => 'index'));
+
+		return $this->redirect(array('action' => 'productos'));
 	}
 	
 	

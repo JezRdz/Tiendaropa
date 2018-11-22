@@ -1,6 +1,5 @@
-<a href="/usuarios"><button class="btn-lg btn-outline-secondary"><i class="fas fa-undo"></i></button></a>
-
 <div class="container py-5">
+<a href="/admin/usuarios"><button class="btn-lg btn-outline-secondary"><i class="fas fa-undo"></i></button></a>
 	<div class="text-center">
 		<h1>Agregar Usuario Nuevo</h1>
 	</div>

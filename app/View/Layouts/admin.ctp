@@ -10,11 +10,11 @@
 	<?php
     echo $this->Html->css('styles');
     echo $this->fetch('meta');
-    echo $this->fetch('css');
-
+	echo $this->fetch('css');
+	
     ?>
 
-	<link rel="icon" type="image/png" href="/img/front/favicon-01.png" sizes="64x64">
+	<link rel="icon" type="image/png" href="/img/fav-icon.png" sizes="64x64">
 	<!-- Include external files and scripts here (See HTML helper for more info.) -->
 
 	<!-- BS -->
@@ -27,10 +27,6 @@
 	 crossorigin="anonymous">
 
 	<link href="https://fonts.googleapis.com/css?family=Open+Sans+Condensed:300,700" rel="stylesheet">
-
-	<!--carrousel-->
-	<link rel="stylesheet" href="js/owlcarousel/assets/owl.carousel.min.css">
-	<link rel="stylesheet" href="js/owlcarousel/assets/owl.theme.default.min.css">
 
 </head>
 
@@ -46,7 +42,7 @@
 		<div id="sidebar-wrapper">
 			<ul class="sidebar-nav">
 				<li class="sidebar-brand">
-					<a href="#">
+					<a href="/admin">
 						ADMIN TIENDA
 					</a>
 				</li>
@@ -75,8 +71,6 @@
 	<div id="footer">
 	</div>
 	</div>
-	<script async defer src="https://maps.googleapis.com/maps/api/js?key=AIzaSyDuUsluKXcIF2Hkqowx_sq2H38d8nUPOdc&callback=initMap">
-	</script>
 
 	<!-- BS JS -->
 	<script src="https://code.jquery.com/jquery-3.3.1.min.js" integrity="sha256-FgpCb/KJQlLNfOu91ta32o/NMZxltwRo8QtmkMRdAu8="
@@ -85,12 +79,12 @@
 	 crossorigin="anonymous"></script>
 	<script src="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/js/bootstrap.min.js" integrity="sha384-ChfqqxuZUCnJSK3+MXmPNIyE6ZbWh2IMqE241rYiqJxyMiZ6OW/JmZQ5stwEULTy"
 	 crossorigin="anonymous"></script>
-	<script src="js/owlcarousel/owl.carousel.min.js"></script>
-	<script src="js/carousel.js"></script>
-	<script src="js/random.js"></script>
+	
 	<?php echo $this->fetch('script'); ?>
 </body>
 
 </html>
 
-<?php $this->Html->css('styles', array('block' => true)); ?>
+<?php echo $this->Html->css('styles'); ?>
+<?php echo $this->Html->script('menu'); ?>
+

@@ -17,6 +17,9 @@ class ProductFixture extends CakeTestFixture {
 		'status' => array('type' => 'tinyinteger', 'null' => false, 'default' => '1', 'length' => 2, 'unsigned' => false),
 		'category_id' => array('type' => 'integer', 'null' => false, 'default' => null, 'unsigned' => false),
 		'image_id' => array('type' => 'integer', 'null' => false, 'default' => null, 'unsigned' => false),
+		'image2_id' => array('type' => 'integer', 'null' => false, 'default' => null, 'unsigned' => false),
+		'image3_id' => array('type' => 'integer', 'null' => false, 'default' => null, 'unsigned' => false),
+		'description' => array('type' => 'string', 'null' => false, 'default' => null, 'collate' => 'latin1_swedish_ci', 'charset' => 'latin1'),
 		'indexes' => array(
 			'PRIMARY' => array('column' => 'id', 'unique' => 1)
 		),
@@ -36,7 +39,10 @@ class ProductFixture extends CakeTestFixture {
 			'price' => 1,
 			'status' => 1,
 			'category_id' => 1,
-			'image_id' => 1
+			'image_id' => 1,
+			'image2_id' => 1,
+			'image3_id' => 1,
+			'description' => 'Lorem ipsum dolor sit amet'
 		),
 	);
 

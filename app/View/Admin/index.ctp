@@ -1,4 +1,4 @@
-<div id="page-content-wrapper">
+
         <div class="container">
             <div class="text-center py-3">
                 <h1>
@@ -7,7 +7,7 @@
             </div>
 
             <div class="row">
-                <div class="col-6">
+                <div class="col-12">
 <div class="card">
     <div class="text-center py-4">
         <h5>Productos</h5>
@@ -16,37 +16,39 @@
 <table class="table table-hover text-center">
     <thead class="thead-dark">
         <tr>
-            
-            <th scope="col"></th>
-            <th scope="col">Nombre</th>
-            <th scope="col">Categoria</th>
+           <th scope="col">#</th>
+				<th scope="col"></th>
+				<th scope="col">Nombre</th>
+				<th scope="col">Categoria</th>
+				<th scope="col">Marca</th>
+				<th scope="col">Precio</th>				
         </tr>
     </thead>
     <tbody>
-        <tr>
-           
-            <td><img src="../ropa/hombre/1.jpg" class="rounded-circle productos-img" alt=""></td>
-            <td>Camisa Blanca</td>
-            <td>Hombre</td>
-        </tr>
-        <tr>
-            
-            <td><img src="../ropa/mujer/5.jpg" class="rounded-circle productos-img" alt=""></td>
-            <td>Vestido Rosa</td>
-            <td>Mujer</td>
-        </tr>
-        <tr>
-            
-            <td><img src="../ropa/hombre/2.jpg" class="rounded-circle productos-img" alt=""></td>
-            <td>Chamarra Negra</td>
-            <td>Hombre</td>           
-        </tr>
+       <?php foreach ($products as $product) : ?>
+			<tr>
+				<th scope="row">1</th>
+				<td><img src="../ropa/hombre/1.jpg" class="rounded-circle productos-img" alt=""></td>
+				<td>
+					<?php echo $product['Product']['name'] ?>
+				</td>
+				<td>
+					<?php echo $product['Category']['name'] ?>
+				</td>
+				<td>
+					<?php echo $product['Product']['brand'] ?>
+				</td>
+				<td>$
+					<?php echo $product['Product']['price'] ?>
+				</td>                
+			</tr>
+			<?php endforeach; ?>
     </tbody>
 </table>
     </div>
 </div>
                 </div>
-            <div class="col-6">
+            <div class="col-12">
 <div class="card">
     <div class="text-center py-4">
         <h5>Usuarios</h5>
@@ -55,34 +57,32 @@
 <table class="table text-center table-hover">
     <thead class="">
         <tr>
-            <th scope="col"></th>
-            <th scope="col">Nombre</th>
-            <th scope="col">Departamento</th>
-            <th scope="col">Rol</th>
+            <th scope="col">#</th>
+			<th scope="col"></th>
+			<th scope="col">Username</th>
+			<th scope="col">Nombre</th>
+			<th scope="col">Rol</th>
         </tr>
     </thead>
     <tbody>
-        <tr>
-            <td><img src="../img/admin.png" class="rounded-circle productos-img" alt=""></td>
-            <td>Admin</td>
-            <td>Admin</td>
-            <td>Administrador</td>
-        
-        </tr>
-        <tr>
-            <td><img src="../img/user2.jpg" class="rounded-circle productos-img" alt=""></td>
-            <td>Carlos Velez</td>
-            <td>Mercadotecnia</td>
-            <td>Usuario normal</td>
-           
-        </tr>
-        <tr>
-            <td><img src="../img/user3.jpg" class="rounded-circle productos-img" alt=""></td>
-            <td>Maria Mendez</td>
-            <td>Recursos Humanos</td>
-            <td>Usuario normal</td>
-           
-        </tr>
+        <?php foreach ($users as $user) : ?>
+			<tr>
+				<th scope="row">
+					<?php echo $user['User']['id'] ?>
+				</th>
+				<td><img src="../img/admin.png" class="rounded-circle productos-img" alt=""></td>
+				<td>
+					<?php echo $user['User']['username'] ?>
+				</td>
+				<td>
+					<?php echo $user['User']['name'] ?>
+					<?php echo $user['User']['lastname'] ?>
+				</td>
+				<td>
+					<?php echo $user['User']['role'] ?>
+				</td>
+			</tr>
+			<?php endforeach; ?>
     </tbody>
 </table>
     </div>
@@ -91,4 +91,3 @@
             </div>
             
         </div>
-    </div>

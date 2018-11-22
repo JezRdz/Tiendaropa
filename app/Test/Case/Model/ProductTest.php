@@ -14,7 +14,9 @@ class ProductTest extends CakeTestCase {
 	public $fixtures = array(
 		'app.product',
 		'app.category',
-		'app.image'
+		'app.image',
+		'app.image2',
+		'app.image3'
 	);
 
 /**

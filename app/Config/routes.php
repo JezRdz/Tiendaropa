@@ -28,7 +28,7 @@
 	Router::connect('/', array('controller' => 'home', 'action' => 'index'));
 	Router::connect('/hombre', array('controller' => 'home', 'action' => 'hombre'));
 	Router::connect('/mujer', array('controller' => 'home', 'action' => 'mujer'));
-	Router::connect('/articulo', array('controller' => 'home', 'action' => 'articulo'));
+	Router::connect('/articulo/*', array('controller' => 'home', 'action' => 'articulo'));
 
 
 	Router::connect('/admin', array('controller' => 'admin', 'action' => 'index'));

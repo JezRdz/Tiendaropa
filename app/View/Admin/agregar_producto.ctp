@@ -1,64 +1,51 @@
 <div class="container py-5">
-	<a href="" class="btn btn-secondary">Cancelar</a>
+	<a href="/admin/productos"><button class="btn-lg btn-outline-secondary"><i class="fas fa-undo"></i></button></a>
 	<div class="text-center">
-		<h1>Agregar Producto Nuevo</h1>
+		<h1>Editar Producto</h1>
 	</div>
-	<?php echo $this->Form->create('Product'); ?>
-	<div class="row">
-		<div class="col-6">
-			<div class="container">
-				<div class="py-2 text-center">
-					<h3>Imagenes</h3>
-				</div>
-				<div class="row">
-					<div style="margin:auto">
-						<div class="card">
-							<img class="card-img-top" src="../img/placeholder.png" alt="Card image cap">
-							<div class="card-body">
-								<p class="card-text text-center">IMAGEN PRINCIPAL</p>
-								<div class="input-group mb-3">
-									<div class="custom-file">
-										<input type="file" class="custom-file-input" id="inputGroupFile02">
-										<label class="custom-file-label" for="inputGroupFile02" aria-describedby="inputGroupFileAddon02"></label>
-									</div>
+	<?php echo $this->Form->create('Product', array('type' => 'file')); ?>
+	
+	<div class="container">
+			<div class="row py-2">		
+
+						<div class="col text-center mx-auto">
+							<div class="card">
+								<img id="img-1" src="/img/admin/placeholder.png" alt="" class="card-img-top img-principal img-border-principal">
+								<div class="card-body input-agregar-div-main">
+									<p class="card-text text-center">IMAGEN PRINCIPAL</p>
+									<label for="Imagen1" class="input-titulo">Agregar imagen..</label>
+									<input type="file" id="Imagen1" numero="1" class="input-imagen " name="data[Product][imagen1]">
 								</div>
 							</div>
+						</div>					
+				
+
+				<div class="col text-center">
+					<div class="card">
+						<img id="img-2" src="/img/admin/placeholder.png" alt="" class="card-img-top img-principal img-border">
+						<div class="card-body input-agregar-div">
+							<p class="card-text text-center">IMAGEN 2</p>
+							<label for="Imagen2" class="input-titulo">Agregar imagen..</label>
+							<input type="file" id="Imagen2" numero="2" class="input-imagen" name="data[Product][imagen2]">
 						</div>
 					</div>
 				</div>
-				<div class="row py-2">
-					<div class="col">
-						<div class="card">
-							<img class="card-img-top" src="../img/placeholder.png" alt="Card image cap">
-							<div class="card-body">
-								<p class="card-text text-center">IMAGEN 1</p>
-								<div class="input-group mb-3">
-									<div class="custom-file">
-										<input type="file" class="custom-file-input" id="inputGroupFile02">
-										<label class="custom-file-label" for="inputGroupFile02" aria-describedby="inputGroupFileAddon02"></label>
-									</div>
-								</div>
-							</div>
+
+				<div class="col text-center">
+					<div class="card">
+						<img id="img-3" src="/img/admin/placeholder.png" alt="" class="card-img-top img-principal img-border">
+						<div class="card-body input-agregar-div">
+							<p class="card-text text-center">IMAGEN 3</p>
+							<label for="Imagen3" class="input-titulo">Agregar imagen..</label>
+							<input type="file" id="Imagen3" numero="3" class="input-imagen" name="data[Product][imagen3]">
 						</div>
+					</div>				
 					</div>
-					<div class="col">
-						<div class="card">
-							<img class="card-img-top" src="../img/placeholder.png" alt="Card image cap">
-							<div class="card-body">
-								<p class="card-text text-center">IMAGEN 2</p>
-								<div class="input-group mb-3">
-									<div class="custom-file">
-										<input type="file" class="custom-file-input" id="inputGroupFile02">
-										<label class="custom-file-label" for="inputGroupFile02" aria-describedby="inputGroupFileAddon02"></label>
-									</div>
-								</div>
-							</div>
-						</div>
-					</div>
-				</div>
-			</div>
-		</div>
-		<div class="col-6">
+
+					</div>				
+					
+<div class="row">
+		
 			<div class="container text-center">
 				<h3>Datos del producto</h3>
 				<div class="add-productform">
@@ -88,10 +75,17 @@
                     'label' => 'Precio',
                     'class' => 'form-control required',
                     'div' => 'py-2 col-6'
+				));
+				
+				echo $this->Form->input('description', array(
+					'label' => 'Descripcion',
+					'type' => 'textarea',
+                    'class' => 'form-control required',
+                    'div' => 'py-2 col-12'
                 ));
 
                 $status = array('1' => 'Activo', '0' => 'Inactivo');
-                echo $this->Form->input('status', array(
+                echo $this->Form->input('status', array(					
                     'label' => 'Estado: ',
                     'div' => 'py-2 col-6',
                     'options' => $status, 'default' => '1'
@@ -110,7 +104,9 @@
 					</div>
 				</div>
 			</div>
-		</div>
+	
 	</div>
 
 </div>
+
+<?php $this->Html->script('agregar_producto', array('inline' => false)); ?>

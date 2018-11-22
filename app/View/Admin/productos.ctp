@@ -1,3 +1,4 @@
+<div id="page-content-wrapper">
 <div class="container">
 	<div class="text-center">
 		<h1>Lista de Productos</h1>
@@ -20,8 +21,8 @@
 		<tbody>
 			<?php foreach($products as $product): ?>
 			<tr>
-				<th scope="row">1</th>
-				<td><img src="../ropa/hombre/1.jpg" class="rounded-circle productos-img" alt=""></td>
+				<th scope="row"><?php echo $product['Product']['id'] ?></th>
+				<td><img src="/<?php echo $product['Image']['path'] . $product['Image']['name']; ?>" class="rounded-circle productos-img" alt=""></td>
 				<td>
 					<?php echo $product['Product']['name'] ?>
 				</td>
@@ -44,3 +45,7 @@
 	</table>
 
 </div>
+</div>
+
+<?php $this->Html->css('styles', array('inline' => false)); ?>
+<?php $this->Html->script('carousel', array('inline' => false)); ?>

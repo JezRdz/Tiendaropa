@@ -143,7 +143,9 @@ body {
 
 .add-productform {
   background-color: gainsboro;
-  padding: 30px; }
+  padding: 30px;
+  width: 500px;
+  margin: auto; }
 
 .user-img {
   width: 50%;
@@ -151,5 +153,53 @@ body {
 
 .btn-group-lg > .btn, .btn-lg {
   border-radius: 2em !important; }
+
+.img-products {
+  width: 150px;
+  height: 150px; }
+
+.foto-cambiada {
+  object-fit: contain; }
+
+.inputs-label {
+  background-color: white;
+  font-size: 15px;
+  color: black;
+  cursor: pointer;
+  padding: 10px 20px;
+  border-radius: 20px;
+  box-shadow: 0 2px 2px 0 rgba(0, 0, 0, 0.14), 0 1px 5px 0 rgba(0, 0, 0, 0.12), 0 3px 1px -2px rgba(0, 0, 0, 0.2); }
+
+.input-agregar-div .input {
+  margin-top: 40px;
+  margin-bottom: 40px; }
+
+.input-agregar-div input {
+  display: none; }
+
+.input-agregar-div-main .input {
+  margin-top: 40px;
+  margin-bottom: 40px; }
+
+.input-agregar-div-main input {
+  display: none; }
+
+.input-agregar-div label {
+  background-color: white;
+  font-size: 15px;
+  color: black;
+  cursor: pointer;
+  padding: 10px 20px;
+  border-radius: 20px;
+  box-shadow: 0 2px 2px 0 rgba(0, 0, 0, 0.14), 0 1px 5px 0 rgba(0, 0, 0, 0.12), 0 3px 1px -2px rgba(0, 0, 0, 0.2); }
+
+.input-agregar-div-main label {
+  background-color: white;
+  font-size: 15px;
+  color: black;
+  cursor: pointer;
+  padding: 10px 44px;
+  border-radius: 20px;
+  box-shadow: 0 2px 2px 0 rgba(0, 0, 0, 0.14), 0 1px 5px 0 rgba(0, 0, 0, 0.12), 0 3px 1px -2px rgba(0, 0, 0, 0.2); }
 
 /*# sourceMappingURL=styles.css.map */

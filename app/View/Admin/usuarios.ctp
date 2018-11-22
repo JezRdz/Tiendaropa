@@ -2,7 +2,7 @@
 	<div class="text-center">
 		<h1>Usuarios</h1>
 		<div class="container py-5">
-			<a href="/agregar_usuario" class="btn btn-warning">Agregar Usuario Nuevo</a>
+			<a href="/admin/agregar_usuario" class="btn btn-warning">Agregar Usuario Nuevo</a>
 		</div>
 	</div>
 	<table class="table text-center">
@@ -34,8 +34,8 @@
 					<?php echo $user['User']['role'] ?>
 				</td>
 				<td>
-					<a href="/admin/editar_usuario/<?php echo $product['Product']['id']; ?>"><button href="/editar_producto" class="btn-lg btn-outline-primary">Editar</button></a>
-					<a href="/admin/eliminar_usuario" onclick="return confirm('¿Estas seguro?')"><button href="" class="btn-lg btn-outline-danger">Eliminar</button></a>
+					<a href="/admin/editar_usuario/<?php echo $user['User']['id']; ?>"><button class="btn-lg btn-outline-primary">Editar</button></a>					
+					<a href="/Admin/eliminar_usuario/<?php echo $user['User']['id']; ?>" onclick="return confirm('¿Estas seguro?')"><button class="btn-lg btn-outline-danger">Eliminar</button></a>
 				</td>
 			</tr>
 			<?php endforeach; ?>
@@ -44,5 +44,5 @@
 </div>
 
 <div class="text-center">
-	<a href="/agregar_usuario" class="btn btn-warning">Agregar Usuario Nuevo</a>
+	<a href="/admin/agregar_usuario" class="btn btn-warning">Agregar Usuario Nuevo</a>
 </div>
