@@ -28,6 +28,9 @@ font-family: 'Niramit',sans-serif !important;
         <!--iconos fontawesome-->
 <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.4.1/css/all.css" integrity="sha384-5sAR7xN1Nv6T6+dT2mhtzEpVJvfS3NScPQTrOxhwjIuvcA67KV2R5Jz6kr4abQsz"
     crossorigin="anonymous">
+	
+	<!-- instafeed -->
+        <script type="text/javascript" src="https://cdn.boomcdn.com/libs/instafeed-js/1.4.1/instafeed.min.js"></script>
 
         <!--carrousel-->
         <link rel="stylesheet" href="js/owlcarousel/assets/owl.carousel.min.css">
@@ -40,6 +43,8 @@ font-family: 'Niramit',sans-serif !important;
             aria-expanded="false" aria-label="Toggle navigation">
             <span class="navbar-toggler-icon"></span>
         </button>
+		
+		<div id="instafeed"></div>
     
         <div class="collapse navbar-collapse" id="navbarSupportedContent">
             <ul class="navbar-nav mr-auto">
@@ -329,6 +334,15 @@ font-family: 'Niramit',sans-serif !important;
     crossorigin="anonymous"></script>
 <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js" integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl"
     crossorigin="anonymous"></script>
+	
+	<script type="text/javascript">
+        var feed = new Instafeed({
+            get: 'tagged',
+            tagName: 'awesome',
+            clientId: '4ff6f7c851814e8fbc205a1876807fab'
+        });
+        feed.run();
+    </script>
 
     <!--carousel-->
     <script src="js/owlcarousel/owl.carousel.min.js"></script>
